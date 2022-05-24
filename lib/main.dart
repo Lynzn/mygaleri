@@ -29,11 +29,6 @@ class BelajarAppBar extends StatelessWidget {
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
                   centerTitle: true,
-                  title: Text("Your Music Choice",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                      )),
                   background: Image(
                     image: NetworkImage('https://images7.alphacoders.com/114/1144794.jpg'),
                     fit: BoxFit.cover,
