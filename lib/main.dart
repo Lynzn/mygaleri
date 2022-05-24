@@ -188,9 +188,9 @@ List<Item> items = [
   ),
   //2
   Item(
-    "https://i.pinimg.com/originals/40/c3/be/40c3bef82a8077e5c872808eefff5c6d.png",
-    "Everest",
-    "02.11",
+    "https://i1.sndcdn.com/artworks-000073226104-qwl397-t500x500.jpg",
+    "Pulang - Float",
+    "3.17",
   ),
   //3
   Item(
