@@ -236,15 +236,15 @@ List<Item> items = [
   ),
   //10
   Item(
-    "https://images.wallpaperscraft.com/image/single/minimalism_sky_clouds_sun_mountains_lake_landscape_95458_1280x720.jpg",
-    "Kilimanjaro",
-    "12.00",
+    "https://i.scdn.co/image/ab67616d0000b273c1528165fd2e76da5331b48c",
+    "Sampai Jadi Debu - Banda Neira",
+    "6.48",
   ),
   //11
   Item(
-    "https://images.wallpaperscraft.com/image/single/lion_art_vector_122213_1280x720.jpg",
-    "The Lion King",
-    "16.19",
+    "https://i.scdn.co/image/ab67616d0000b2738ee03809d40edb632fadd3c0",
+    "Menuju Senja -Payung Teduh",
+    "5.06",
   ),
   //12
   Item(
