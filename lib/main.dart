@@ -200,9 +200,9 @@ List<Item> items = [
   ),
   //4
   Item(
-    "https://image.freepik.com/free-vector/fairytale-concept-with-child-reading_23-2148472951.jpg",
-    "Dreaming",
-    "22.11",
+    "https://i1.sndcdn.com/artworks-000123190347-nsgu34-t500x500.jpg",
+    "Hujan di Mimpi- Banda Neira",
+    "4.56",
   ),
   //5
   Item(
