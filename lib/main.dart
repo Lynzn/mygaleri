@@ -29,7 +29,7 @@ class BelajarAppBar extends StatelessWidget {
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
                   centerTitle: true,
-                  title: Text("Belajar SliverAppBar",
+                  title: Text("Your Music Choice",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20.0,
@@ -126,7 +126,7 @@ class Galery extends StatelessWidget {
             elevation: 10.0,
             child: Column(children: <Widget>[
               Image.network(
-                "https://i.ytimg.com/vi/l2mI4vL95kU/maxresdefault.jpg",
+                "https://i1.sndcdn.com/artworks-000123190347-nsgu34-t500x500.jpg",
                 height: 150.0,
                 width: 200.0,
                 fit: BoxFit.cover,
