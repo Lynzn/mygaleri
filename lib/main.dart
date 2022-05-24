@@ -343,14 +343,12 @@ class Galery extends StatelessWidget {
 }
 
 class Playlist extends StatelessWidget {
-  final List ffv = [
-    "Anneth Delliecia - Mungkin Hari Ini Esok atau Nanti",
-    "Denny Caknan - Satru",
-    "Lyodra - Pesan Terakhir",
-    "Mahalini - Melawan Restu",
-    "Via Vallen - Pikir Keri",
-    "Arvian Dwi - Ajarkan Aku",
-    "Mahen - Pura Pura Lupa"
+  final List myfav = [
+    "Desember - Efek Rumah Kaca",
+    "Aku Tenang - Fourtwnty",
+    "Dialog Hujan - Senar Senja",
+    "Sesuatu di Jogja - Adhitia Sofyan",
+    "Sampai Jadi Debu - Banda Neira"
   ];
   @override
   Widget build(BuildContext context) {
@@ -359,12 +357,12 @@ class Playlist extends StatelessWidget {
         itemBuilder: (context, index) {
           return Card(
               child: ListTile(
-            title: Text(ffv[index], style: TextStyle(fontSize: 20)),
-            subtitle: Text("Lagu dari " + ffv[index]),
+            title: Text(myfav[index], style: TextStyle(fontSize: 20)),
+            subtitle: Text("Lagu dari " + myfav[index]),
             leading: Icon(Icons.audiotrack),
           ));
         },
-        itemCount: ffv.length,
+        itemCount: myfav.length,
       ),
     );
   }
