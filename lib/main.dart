@@ -99,7 +99,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
               leading: Container(
                 width: 50,
                 height: 70,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.black, image: DecorationImage(image: AssetImage("assets/images/6.jpg"), fit: BoxFit.cover)),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.black, image: DecorationImage(image: NetworkImage("https://i1.sndcdn.com/artworks-000179078251-ax79uc-t500x500.jpg"), fit: BoxFit.cover)),
               ),
               title: Text("Love me like you do", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14)),
               subtitle: Padding(
