@@ -5,45 +5,81 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ListViewHome(),
+      home: BelajarAppBar(),
     );
   }
 }
 
-class ListViewHome extends StatelessWidget {
-  var date = DateTime.now();
+class BelajarAppBar extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Galery'),
-      ),
-      body: GridView.count(
-        crossAxisCount: 2,
-        children: List.generate(20, (index) {
-          return Container(
-            child: Card(
-              color: Colors.deepPurpleAccent,
-              child: Container(
-                alignment: Alignment.bottomCenter,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage('https://staticg.sportskeeda.com/editor/2022/03/fcc33-16474760406615-1920.jpg'),
-                    fit: BoxFit.fitHeight,
+      body: DefaultTabController(
+        length: 2,
+        child: NestedScrollView(
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              SliverAppBar(
+                expandedHeight: 200.0,
+                floating: false,
+                pinned: true,
+                flexibleSpace: FlexibleSpaceBar(
+                  centerTitle: true,
+                  title: Text("Belajar SliverAppBar",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                      )),
+                  background: Image(
+                    image: NetworkImage('https://cdn.pixabay.com/photo/2020/10/04/18/13/mountains-5627143_1280.jpg'),
+                    fit: BoxFit.cover,
                   ),
                 ),
-                child: ListTile(
-                  title: Text(date.day.toString() + '/' + date.month.toString() + '/' + date.year.toString(), style: TextStyle(color: Colors.white, fontSize: 24.0)),
+              ),
+              SliverPersistentHeader(
+                pinned: true,
+                // padding: new EdgeInsets.all(10.0),
+                //
+                delegate: _SliverAppBarDelegate(
+                  TabBar(
+                    labelColor: Colors.black87,
+                    unselectedLabelColor: Colors.grey,
+                    tabs: [
+                      new Tab(icon: new Icon(Icons.audiotrack), text: "Songs"),
+                      new Tab(icon: new Icon(Icons.collections), text: "Gallery"),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          );
-        }),
+            ];
+          },
+          body: Center(
+            child: Text("belajar app bar"),
+          ),
+        ),
       ),
     );
+  }
+}
+
+class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
+  _SliverAppBarDelegate(this._tabBar);
+  final TabBar _tabBar;
+
+  double get minExtent => _tabBar.preferredSize.height;
+  double get maxExtent => _tabBar.preferredSize.height;
+
+  Widget build(BuildContext context, double shrinkOffset, bool overlabsContents) {
+    return new Container(
+      child: _tabBar,
+    );
+  }
+
+  bool shouldRebuild(_SliverAppBarDelegate oldDelegate) {
+    return false;
   }
 }
