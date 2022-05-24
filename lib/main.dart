@@ -126,7 +126,7 @@ class Galery extends StatelessWidget {
             elevation: 10.0,
             child: Column(children: <Widget>[
               Image.network(
-                "https://i1.sndcdn.com/artworks-000123190347-nsgu34-t500x500.jpg",
+                "https://i1.sndcdn.com/artworks-000259867817-48awxi-t500x500.jpg",
                 height: 150.0,
                 width: 200.0,
                 fit: BoxFit.cover,
