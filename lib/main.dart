@@ -1,303 +1,378 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        // This is the theme of your application.
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
+      home: BelajarAppBar(),
     );
   }
 }
 
-class Item {
-  final String imageUrl;
-  final String name;
-  final String description;
-
-  Item(this.imageUrl, this.name, this.description);
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text('Song Galery'),
-          bottom: TabBar(
-            tabs: <Widget>[
-              Tab(
-                icon: Icon(Icons.collections),
-              ),
-              Tab(
-                icon: Icon(Icons.audiotrack),
-              ),
-            ],
-          ),
-        ),
-        body: TabBarView(
-          children: <Widget>[
-            // GridView tab content Widget
-            GridView.count(
-              // Items in row
-              crossAxisCount: 2,
-              // Vertical spacing between rows
-              mainAxisSpacing: 5.0,
-              // Horizontal spacing between columns
-              crossAxisSpacing: 5.0,
-              // Padding of GridView
-              padding: const EdgeInsets.all(5.0),
-              // The ratio between the width and height of items
-              childAspectRatio: 0.75,
-              // List of items widgets
-              children: items.map<Widget>((Item item) => _ItemGridCellWidget(item)).toList(),
-            ),
-            // ListView tab content Widget
-            ListView.builder(itemCount: items.length, itemBuilder: (BuildContext context, int position) => _ItemListCellWidget(items[position]))
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _ItemGridCellWidget extends StatelessWidget {
-  final Item _item;
-
-  _ItemGridCellWidget(this._item);
-
-  void _selectItem(BuildContext context) {
-    Navigator.push(
-        context,
-        MaterialPageRoute<void>(
-          builder: (BuildContext context) => _ItemFullScreenWidget(_item),
-        ));
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return GridTile(
-        footer: GridTileBar(
-          title: Text(_item.name),
-          subtitle: Text(_item.description),
-          backgroundColor: Colors.black38,
-        ),
-        child: GestureDetector(
-          onTap: () => _selectItem(context),
-          child: Hero(
-            key: Key(_item.imageUrl),
-            tag: _item.name,
-            child: Image.network(
-              _item.imageUrl,
-              fit: BoxFit.cover,
-            ),
-          ),
-        ));
-  }
-}
-
-class _ItemListCellWidget extends StatelessWidget {
-  final Item _item;
-
-  _ItemListCellWidget(this._item);
-
-  void _selectItem(BuildContext context) {
-    Navigator.push(
-        context,
-        MaterialPageRoute<void>(
-          builder: (BuildContext context) => _ItemFullScreenWidget(_item),
-        ));
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      onTap: () => _selectItem(context),
-//      isThreeLine: true,
-      title: Text(
-        _item.name,
-        style: TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 20,
-        ),
-      ),
-      subtitle: Text(
-        _item.description,
-        maxLines: 2,
-        style: TextStyle(),
-      ),
-      leading: Hero(
-        key: Key(_item.imageUrl),
-        tag: _item.name,
-        child: Image.network(
-          _item.imageUrl,
-          width: 50,
-          height: 50,
-          fit: BoxFit.cover,
-        ),
-      ),
-    );
-  }
-}
-
-class _ItemFullScreenWidget extends StatelessWidget {
-  final Item _item;
-
-  _ItemFullScreenWidget(this._item);
-
+class BelajarAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(_item.name),
-      ),
-      body: SizedBox.expand(
-        child: Hero(
-          tag: _item.name,
-          child: Image.network(
-            _item.imageUrl,
-            fit: BoxFit.cover,
-          ),
+      body: DefaultTabController(
+        length: 3,
+        child: NestedScrollView(
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              SliverAppBar(
+                expandedHeight: 200.0,
+                floating: false,
+                pinned: true,
+                flexibleSpace: FlexibleSpaceBar(
+                  centerTitle: true,
+                  title: Text("Belajar SliverAppBar",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                      )),
+                  background: Image(
+                    image: NetworkImage(''),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              SliverPersistentHeader(
+                pinned: true,
+                delegate: _SliverAppBarDelegate(
+                  TabBar(
+                    labelColor: Colors.black87,
+                    unselectedLabelColor: Colors.grey,
+                    tabs: [
+                      new Tab(icon: new Icon(Icons.audiotrack), text: "Song"),
+                      new Tab(icon: new Icon(Icons.download), text: "Galery"),
+                      new Tab(icon: new Icon(Icons.favorite), text: "Playlist"),
+                    ],
+                  ),
+                ),
+              ),
+            ];
+          },
+          body: TabBarView(children: <Widget>[
+            Song(),
+            Galery(),
+            Playlist(),
+          ]),
         ),
       ),
     );
   }
 }
 
-List<Item> items = [
-  //1
-  Item(
-    "https://i.ytimg.com/vi/l2mI4vL95kU/maxresdefault.jpg",
-    "Sesuatu di Jogja - Adhitia Sofyan",
-    "4.47",
-  ),
-  //2
-  Item(
-    "https://i1.sndcdn.com/artworks-000073226104-qwl397-t500x500.jpg",
-    "Pulang - Float",
-    "3.17",
-  ),
-  //3
-  Item(
-    "http://images.genius.com/3d7767eaf6e73a6a738cbcea589c3a88.700x700x1.jpg",
-    "Desember - Efek Rumah Kaca",
-    "4.17",
-  ),
-  //4
-  Item(
-    "https://i1.sndcdn.com/artworks-000123190347-nsgu34-t500x500.jpg",
-    "Hujan di Mimpi - Banda Neira",
-    "4.56",
-  ),
-  //5
-  Item(
-    "https://i.scdn.co/image/ab67616d0000b2737478de646383e04594b568a3",
-    "Senandung Maaf - White Shoes",
-    "3.53",
-  ),
-  //6
-  Item(
-    "https://i.scdn.co/image/ab67616d0000b2737b2ee058353a3180f72ec03b",
-    "Akad - Payung Teduh",
-    "4.19",
-  ),
-  //7
-  Item(
-    "https://i.scdn.co/image/ab67616d0000b2734fe255e0ba819e903f5fc4e5",
-    "Aku Tenang - Fourtwnty",
-    "3.49",
-  ),
-  //8
-  Item(
-    "https://i.scdn.co/image/ab67616d0000b273c72f1ef7daf938592186bc85",
-    "Dialog Hujan - Senar Senja",
-    "4.24",
-  ),
-  //9
-  Item(
-    "http://images.genius.com/3d7767eaf6e73a6a738cbcea589c3a88.700x700x1.jpg",
-    "Sebelah Mata - Efek Rumah Kaca",
-    "4.29",
-  ),
-  //10
-  Item(
-    "https://i.scdn.co/image/ab67616d0000b273c1528165fd2e76da5331b48c",
-    "Sampai Jadi Debu - Banda Neira",
-    "6.48",
-  ),
-  //11
-  Item(
-    "https://i.scdn.co/image/ab67616d0000b2738ee03809d40edb632fadd3c0",
-    "Menuju Senja -Payung Teduh",
-    "5.06",
-  ),
-  //12
-  Item(
-    "https://images.wallpaperscraft.com/image/single/minimalism_origami_japan_rising_sun_wave_74405_1280x720.jpg",
-    "Japanese",
-    "15.11",
-  ),
-  //13
-  Item(
-    "https://images.wallpaperscraft.com/image/single/landscape_mountains_art_140515_1280x720.jpg",
-    "Lavender",
-    "21.20",
-  ),
-  //14
-  Item(
-    "https://images.wallpaperscraft.com/image/single/spruce_art_forest_131371_1280x720.jpg",
-    "Night Nature",
-    "16.07",
-  ),
-  //15
-  Item(
-    "https://images.wallpaperscraft.com/image/single/forest_trees_mountains_146485_1280x720.jpg",
-    "Forest 2",
-    "17.18",
-  ),
-  //16
-  Item(
-    "https://images.wallpaperscraft.com/image/single/phoenix_bird_art_140086_1280x720.jpg",
-    "Phoenix",
-    "10.00",
-  ),
-  //17
-  Item(
-    "https://images.wallpaperscraft.com/image/single/mountains_river_sun_143529_1280x720.jpg",
-    "River",
-    "10.11",
-  ),
-  //18
-  Item(
-    "https://images.wallpaperscraft.com/image/single/silhouette_moon_art_138485_1280x720.jpg",
-    "Moon Art",
-    "16.19",
-  ),
-  //19
-  Item(
-    "https://images.wallpaperscraft.com/image/single/graphics_low_poly_digital_art_minimalism_102027_1280x720.jpg",
-    "Poligon Art",
-    "23.59",
-  ),
-  //20
-  Item(
-    "https://images.wallpaperscraft.com/image/single/mountains_sunset_landscape_147439_1280x720.jpg",
-    "Sunset",
-    "16.10",
-  ),
-];
+class Song extends StatelessWidget {
+  final List lagu = [
+    "Ndarboy Genk - Koyo Jogja Istimewa",
+    "Denny Caknan - Satru",
+    "Lyodra - Pesan Terakhir",
+    "Andmesh - Kumau Dia",
+    "Mahalini - Melawan Restu",
+    "Judika - Putus atau Terus",
+    "Yura Yunita - Harus Bahagia",
+    "Aldy Maldini - Biar Aku yang Pergi",
+    "Arvian Dwi - Ajarkan Aku",
+    "Via Vallen - Pikir Keri",
+    "Maudy Ayunda - Untuk Apa",
+    "Mahen - Pura Pura Lupa"
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ListView.builder(
+        itemBuilder: (context, index) {
+          return Card(
+              child: ListTile(
+            title: Text(lagu[index], style: TextStyle(fontSize: 20)),
+            subtitle: Text("Lagu dari " + lagu[index]),
+            leading: Icon(Icons.audiotrack),
+          ));
+        },
+        itemCount: lagu.length,
+      ),
+    );
+  }
+}
+
+class Galery extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: GridView.count(crossAxisCount: 2, children: <Widget>[
+        Container(
+          child: Card(
+            elevation: 10.0,
+            child: Column(children: <Widget>[
+              Image.network(
+                "https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2022/04/19/54211264.jpg",
+                height: 150.0,
+                width: 200.0,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(height: 1.0),
+              Text(
+                'Ndarboy Genk - Koyo Jogja Istimewa',
+                style: TextStyle(color: Colors.brown, fontSize: 12, fontWeight: FontWeight.bold),
+              ),
+            ]),
+          ),
+        ),
+        Container(
+          child: Card(
+            elevation: 10.0,
+            child: Column(children: <Widget>[
+              Image.asset(
+                "asset/images/satru.jpg",
+                height: 150.0,
+                width: 200.0,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(height: 1.0),
+              Text(
+                'Denny Caknan - Satru',
+                style: TextStyle(color: Colors.brown, fontSize: 12, fontWeight: FontWeight.bold),
+              ),
+            ]),
+          ),
+        ),
+        Container(
+          child: Card(
+            elevation: 10.0,
+            child: Column(children: <Widget>[
+              Image.asset(
+                "asset/images/lyodra.jpg",
+                height: 150.0,
+                width: 200.0,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(height: 1.0),
+              Text(
+                'Lyodra - Pesan Terakhir',
+                style: TextStyle(color: Colors.brown, fontSize: 12, fontWeight: FontWeight.bold),
+              ),
+            ]),
+          ),
+        ),
+        Container(
+          child: Card(
+            elevation: 10.0,
+            child: Column(children: <Widget>[
+              Image.asset(
+                "asset/images/andmesh.jpg",
+                height: 150.0,
+                width: 200.0,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(height: 1.0),
+              Text(
+                'Andmesh - Kumau Dia',
+                style: TextStyle(color: Colors.brown, fontSize: 12, fontWeight: FontWeight.bold),
+              ),
+            ]),
+          ),
+        ),
+        Container(
+          child: Card(
+            elevation: 10.0,
+            child: Column(children: <Widget>[
+              Image.asset(
+                "asset/images/lini.jpg",
+                height: 150.0,
+                width: 200.0,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(height: 1.0),
+              Text(
+                'Mahalini - Melawan Restu',
+                style: TextStyle(color: Colors.brown, fontSize: 12, fontWeight: FontWeight.bold),
+              ),
+            ]),
+          ),
+        ),
+        Container(
+          child: Card(
+            elevation: 10.0,
+            child: Column(children: <Widget>[
+              Image.asset(
+                "asset/images/judika.jpg",
+                height: 150.0,
+                width: 200.0,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(height: 1.0),
+              Text(
+                'Judika - Putus atau Terus',
+                style: TextStyle(color: Colors.brown, fontSize: 12, fontWeight: FontWeight.bold),
+              ),
+            ]),
+          ),
+        ),
+        Container(
+          child: Card(
+            elevation: 10.0,
+            child: Column(children: <Widget>[
+              Image.network(
+                '',
+                height: 150.0,
+                width: 200.0,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(height: 1.0),
+              Text(
+                'Mahen - Pura Pura Lupa',
+                style: TextStyle(color: Colors.brown, fontSize: 12, fontWeight: FontWeight.bold),
+              ),
+            ]),
+          ),
+        ),
+        Container(
+          child: Card(
+            elevation: 10.0,
+            child: Column(children: <Widget>[
+              Image.network(
+                '',
+                height: 150.0,
+                width: 200.0,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(height: 1.0),
+              Text(
+                'Via Vallen - Pikir Keri',
+                style: TextStyle(color: Colors.brown, fontSize: 12, fontWeight: FontWeight.bold),
+              ),
+            ]),
+          ),
+        ),
+        Container(
+          child: Card(
+            elevation: 10.0,
+            child: Column(children: <Widget>[
+              Image.network(
+                '',
+                height: 150.0,
+                width: 200.0,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(height: 1.0),
+              Text(
+                'Arvian Dwi - Ajarkan AKu',
+                style: TextStyle(color: Colors.brown, fontSize: 12, fontWeight: FontWeight.bold),
+              ),
+            ]),
+          ),
+        ),
+        Container(
+          child: Card(
+            elevation: 10.0,
+            child: Column(children: <Widget>[
+              Image.network(
+                '',
+                height: 150.0,
+                width: 200.0,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(height: 1.0),
+              Text(
+                'Aldy Maldini- Biar Aku Yang Pergi',
+                style: TextStyle(color: Colors.brown, fontSize: 12, fontWeight: FontWeight.bold),
+              ),
+            ]),
+          ),
+        ),
+        Container(
+          child: Card(
+            elevation: 10.0,
+            child: Column(children: <Widget>[
+              Image.network(
+                '',
+                height: 150.0,
+                width: 200.0,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(height: 1.0),
+              Text(
+                'Yura Yunita - Harus Bahagia',
+                style: TextStyle(color: Colors.brown, fontSize: 12, fontWeight: FontWeight.bold),
+              ),
+            ]),
+          ),
+        ),
+        Container(
+          child: Card(
+            elevation: 10.0,
+            child: Column(children: <Widget>[
+              Image.network(
+                '',
+                height: 150.0,
+                width: 200.0,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(height: 1.0),
+              Text(
+                'Maudy Ayunda - Untuk Apa',
+                style: TextStyle(color: Colors.brown, fontSize: 12, fontWeight: FontWeight.bold),
+              ),
+            ]),
+          ),
+        ),
+      ]),
+    );
+  }
+}
+
+class Playlist extends StatelessWidget {
+  final List ffv = [
+    "Anneth Delliecia - Mungkin Hari Ini Esok atau Nanti",
+    "Denny Caknan - Satru",
+    "Lyodra - Pesan Terakhir",
+    "Mahalini - Melawan Restu",
+    "Via Vallen - Pikir Keri",
+    "Arvian Dwi - Ajarkan Aku",
+    "Mahen - Pura Pura Lupa"
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ListView.builder(
+        itemBuilder: (context, index) {
+          return Card(
+              child: ListTile(
+            title: Text(ffv[index], style: TextStyle(fontSize: 20)),
+            subtitle: Text("Lagu dari " + ffv[index]),
+            leading: Icon(Icons.audiotrack),
+          ));
+        },
+        itemCount: ffv.length,
+      ),
+    );
+  }
+}
+
+class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
+  _SliverAppBarDelegate(this._tabBar);
+
+  final TabBar _tabBar;
+
+  @override
+  double get minExtent => _tabBar.preferredSize.height;
+  @override
+  double get maxExtent => _tabBar.preferredSize.height;
+
+  @override
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return new Container(
+      child: _tabBar,
+    );
+  }
+
+  @override
+  bool shouldRebuild(_SliverAppBarDelegate oldDelegate) {
+    return false;
+  }
+}
