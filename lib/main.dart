@@ -183,7 +183,7 @@ List<Item> items = [
   //1
   Item(
     "https://i.ytimg.com/vi/l2mI4vL95kU/maxresdefault.jpg",
-    "Sesuatu di Jogja",
+    "Sesuatu di Jogja - Adhitia",
     "4.47",
   ),
   //2
@@ -194,9 +194,9 @@ List<Item> items = [
   ),
   //3
   Item(
-    "https://image.freepik.com/free-vector/flat-design-baby-shark-cartoon-style_52683-36255.jpg",
-    "Shark",
-    "21.52",
+    "http://images.genius.com/3d7767eaf6e73a6a738cbcea589c3a88.700x700x1.jpg",
+    "Desember - Efek Rumah Kaca",
+    "4.17",
   ),
   //4
   Item(
