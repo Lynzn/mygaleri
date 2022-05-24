@@ -153,7 +153,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
               leading: Container(
                 width: 50,
                 height: 70,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.black, image: DecorationImage(image: AssetImage("https://cdns-images.dzcdn.net/images/artist/02b4b508aa974d5f6e8348e2186dd49f/500x500.jpg"), fit: BoxFit.cover)),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.black, image: DecorationImage(image: NetworkImage("https://cdns-images.dzcdn.net/images/artist/02b4b508aa974d5f6e8348e2186dd49f/500x500.jpg"), fit: BoxFit.cover)),
               ),
               title: Text("Feel Me", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14)),
               subtitle: Padding(
