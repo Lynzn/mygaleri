@@ -183,7 +183,7 @@ List<Item> items = [
   //1
   Item(
     "https://i.ytimg.com/vi/l2mI4vL95kU/maxresdefault.jpg",
-    "Sesuatu di Jogja - Adhitia",
+    "Sesuatu di Jogja - Adhitia Sofyan",
     "4.47",
   ),
   //2
@@ -201,14 +201,14 @@ List<Item> items = [
   //4
   Item(
     "https://i1.sndcdn.com/artworks-000123190347-nsgu34-t500x500.jpg",
-    "Hujan di Mimpi- Banda Neira",
+    "Hujan di Mimpi - Banda Neira",
     "4.56",
   ),
   //5
   Item(
-    "https://img.freepik.com/free-vector/spring-landscape-scene_23-2148860692.jpg",
-    "Nature",
-    "01.12",
+    "https://i.scdn.co/image/ab67616d0000b2737478de646383e04594b568a3",
+    "Senandung Maaf - White Shoes",
+    "3.53",
   ),
   //6
   Item(
