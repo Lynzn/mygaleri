@@ -81,7 +81,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
               leading: Container(
                 width: 50,
                 height: 70,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.black, image: DecorationImage(image: AssetImage("https://i.scdn.co/image/ab67616d0000b27317c14cb78745888be48cef78"), fit: BoxFit.cover)),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.black, image: DecorationImage(image: AssetImage("https://i.ytimg.com/vi/euCqAq6BRa4/maxresdefault.jpg"), fit: BoxFit.cover)),
               ),
               title: Text("Let me Love you", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14)),
               subtitle: Padding(
