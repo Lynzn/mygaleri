@@ -57,9 +57,7 @@ class BelajarAppBar extends StatelessWidget {
               ),
             ];
           },
-          body: Center(
-            child: Text("belajar app bar"),
-          ),
+          body: Center(),
         ),
       ),
     );
