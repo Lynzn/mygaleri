@@ -35,7 +35,7 @@ class BelajarAppBar extends StatelessWidget {
                         fontSize: 20.0,
                       )),
                   background: Image(
-                    image: NetworkImage(''),
+                    image: NetworkImage('https://images7.alphacoders.com/114/1144794.jpg'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -162,7 +162,7 @@ class Galery extends StatelessWidget {
             elevation: 10.0,
             child: Column(children: <Widget>[
               Image.network(
-                "http://images.genius.com/3d7767eaf6e73a6a738cbcea589c3a88.700x700x1.jpg",
+                "https://i.scdn.co/image/ab67616d0000b273c72f1ef7daf938592186bc85",
                 height: 150.0,
                 width: 200.0,
                 fit: BoxFit.cover,
@@ -324,7 +324,7 @@ class Galery extends StatelessWidget {
             elevation: 10.0,
             child: Column(children: <Widget>[
               Image.network(
-                "https://i1.sndcdn.com/artworks-000073226104-qwl397-t500x500.jpg",
+                "https://i.scdn.co/image/ab67616d0000b273ef3e3c60762b7ed406af95f9",
                 height: 150.0,
                 width: 200.0,
                 fit: BoxFit.cover,
