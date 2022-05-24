@@ -85,7 +85,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
               ),
               title: Text("Let me Love you", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14)),
               subtitle: Padding(
-                padding: const EdgeInsets.only(top: 7),
+                padding: const EdgeInsets.only(top: 5),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
