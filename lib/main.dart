@@ -117,7 +117,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
               leading: Container(
                 width: 50,
                 height: 70,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.black, image: DecorationImage(image: AssetImage("assets/images/8.jpg"), fit: BoxFit.cover)),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.black, image: DecorationImage(image: NetworkImage("https://i.ytimg.com/vi/Io0fBr1XBUA/maxresdefault.jpg"), fit: BoxFit.cover)),
               ),
               title: Text("Don't Let me down", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14)),
               subtitle: Padding(
@@ -135,7 +135,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
               leading: Container(
                 width: 50,
                 height: 70,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.black, image: DecorationImage(image: AssetImage("assets/images/9.jpg"), fit: BoxFit.cover)),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.black, image: DecorationImage(image: NetworkImage("https://is4-ssl.mzstatic.com/image/thumb/Music115/v4/fe/ec/92/feec921a-ff31-90e6-3beb-c62e4315a259/853564589685.png/400x400cc.jpg"), fit: BoxFit.cover)),
               ),
               title: Text("Take me with you", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14)),
               subtitle: Padding(
@@ -153,7 +153,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
               leading: Container(
                 width: 50,
                 height: 70,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.black, image: DecorationImage(image: AssetImage("assets/images/7.jpg"), fit: BoxFit.cover)),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.black, image: DecorationImage(image: AssetImage("https://cdns-images.dzcdn.net/images/artist/02b4b508aa974d5f6e8348e2186dd49f/500x500.jpg"), fit: BoxFit.cover)),
               ),
               title: Text("Feel Me", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14)),
               subtitle: Padding(
