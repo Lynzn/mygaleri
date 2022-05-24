@@ -80,7 +80,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
             ListTile(
               leading: Container(
                 width: 50,
-                height: 70,
+                height: 50,
                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.black, image: DecorationImage(image: NetworkImage("https://i.ytimg.com/vi/euCqAq6BRa4/maxresdefault.jpg"), fit: BoxFit.cover)),
               ),
               title: Text("Let me Love you", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14)),
