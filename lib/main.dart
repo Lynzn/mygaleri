@@ -74,7 +74,6 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   Widget build(BuildContext context, double shrinkOffset, bool overlabsContents) {
     return new Container(
       child: Container(
-        width: double.infinity,
         child: Column(
           children: [
             ListTile(
