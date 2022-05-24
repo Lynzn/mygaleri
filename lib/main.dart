@@ -212,15 +212,15 @@ List<Item> items = [
   ),
   //6
   Item(
-    "https://pw.artfile.me/wallpaper/20-03-2017/650x366/vektornaya-grafika-priroda--nature-sneg--1143282.jpg",
-    "Everest 2",
-    "23.44",
+    "https://i.scdn.co/image/ab67616d0000b2737b2ee058353a3180f72ec03b",
+    "Akad - Payung Teduh",
+    "4.19",
   ),
   //7
   Item(
-    "https://wallpaperaccess.com/full/645620.png",
-    "IronHeard",
-    "19.20",
+    "https://i.scdn.co/image/ab67616d0000b2734fe255e0ba819e903f5fc4e5",
+    "Aku Tenang - Fourtwnty",
+    "3.49",
   ),
   //8
   Item(
