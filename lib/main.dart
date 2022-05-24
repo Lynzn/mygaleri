@@ -224,15 +224,15 @@ List<Item> items = [
   ),
   //8
   Item(
-    "https://images.wallpaperscraft.com/image/single/astronaut_spacesuit_reflection_144426_1280x720.jpg",
-    "Astronot",
-    "20.00",
+    "https://i.scdn.co/image/ab67616d0000b273c72f1ef7daf938592186bc85",
+    "Dialog Hujan - Senar Senja",
+    "4.24",
   ),
   //9
   Item(
-    "https://images.wallpaperscraft.com/image/single/deer_art_vector_134088_1280x720.jpg",
-    "Deer",
-    "14.55",
+    "http://images.genius.com/3d7767eaf6e73a6a738cbcea589c3a88.700x700x1.jpg",
+    "Sebelah Mata - Efek Rumah Kaca",
+    "4.29",
   ),
   //10
   Item(
