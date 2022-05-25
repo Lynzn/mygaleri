@@ -27,7 +27,7 @@ class ListViewHome extends StatelessWidget {
               height: 250,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage('https://images.tokopedia.net/img/cache/700/product-1/2020/4/27/620102302/620102302_7c350566-6e96-4f96-a514-1187b0760e4b_1100_1100.jpg'),
+                  image: NetworkImage("https://media2.bulgari.com/f_auto,q_auto/production/dw62a0c52b/images/images/1348757.png"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -35,11 +35,11 @@ class ListViewHome extends StatelessWidget {
             Container(
               height: 30,
               margin: const EdgeInsets.only(top: 10.0),
-              child: Text('Gamis hagia gown Wanita', style: TextStyle(fontSize: 20.0)),
+              child: Text('Bulgari Dias', style: TextStyle(fontSize: 20.0)),
             ),
             Container(
               height: 50,
-              child: Text('Rp 145.000', style: TextStyle(color: Colors.orange, fontSize: 30)),
+              child: Text('Rp 24.500.000', style: TextStyle(color: Colors.orange, fontSize: 30)),
             ),
             Container(
               height: 30,
