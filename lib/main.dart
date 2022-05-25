@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
 }
 
 class DetailProduct extends StatelessWidget {
-  var date = DateTime.now();
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
