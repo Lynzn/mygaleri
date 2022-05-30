@@ -70,14 +70,14 @@ class _HomePageState extends State<HomePage> {
                   cardNumber: 189364,
                   month: 11,
                   year: 24,
-                  color: Colors.purple,
+                  color: Colors.lime,
                 ),
                 MyCard(
                   balance: 4.127,
                   cardNumber: 995623,
                   month: 09,
                   year: 25,
-                  color: Colors.purple,
+                  color: Colors.green,
                 ),
               ]))
         ],
