@@ -40,6 +40,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
       appBar: AppBar(
         title: Text("Belajar Bottom Navbar"),
         backgroundColor: Colors.black,
+        centerTitle: true,
       ),
       body: Container(
         child: Center(child: _pages.elementAt(_selectedNavbar)),
