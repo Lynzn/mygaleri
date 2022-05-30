@@ -39,6 +39,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Belajar Bottom Navbar"),
+        backgroundColor: Colors.black,
       ),
       body: Center(child: _pages.elementAt(_selectedNavbar)),
       bottomNavigationBar: BottomNavigationBar(
