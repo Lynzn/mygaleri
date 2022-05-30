@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                     )),
                 Container(
                   margin: EdgeInsets.all(20),
-                  padding: EdgeInsets.all(7),
+                  padding: EdgeInsets.all(4),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle,
