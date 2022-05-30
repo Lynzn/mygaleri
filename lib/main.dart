@@ -65,21 +65,18 @@ class _HomePageState extends State<HomePage> {
                   cardNumber: 123456,
                   month: 02,
                   year: 24,
-                  color: Colors.purple,
                 ),
                 MyCard(
                   balance: 8.981,
                   cardNumber: 189364,
                   month: 11,
                   year: 24,
-                  color: Colors.lime,
                 ),
                 MyCard(
                   balance: 4.127,
                   cardNumber: 995623,
                   month: 09,
                   year: 25,
-                  color: Colors.green,
                 ),
               ])),
           SizedBox(height: 25),
@@ -94,14 +91,12 @@ class MyCard extends StatelessWidget {
   final int cardNumber;
   final int month;
   final int year;
-  final color;
   const MyCard({
     Key? key,
     required this.balance,
     required this.cardNumber,
     required this.month,
     required this.year,
-    required this.color,
   }) : super(key: key);
 
   @override
@@ -112,7 +107,7 @@ class MyCard extends StatelessWidget {
             width: 300,
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: color,
+              image: DecorationImage(image: NetworkImage("http://via.placeholder.com/350x150")),
               borderRadius: BorderRadius.circular(16),
             ),
             child: Column(
