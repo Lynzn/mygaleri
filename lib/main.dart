@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
                   margin: EdgeInsets.all(20),
                   padding: EdgeInsets.all(4),
                   decoration: BoxDecoration(
-                    color: Colors.grey,
+                    color: Colors.white,
                     shape: BoxShape.circle,
                   ),
                   child: Icon(Icons.search),
