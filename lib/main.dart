@@ -203,6 +203,7 @@ class _Bills extends State<Bills> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              SizedBox(height: 30),
               Text(
                 'Upcomming bill',
                 style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
