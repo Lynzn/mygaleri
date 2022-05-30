@@ -44,6 +44,7 @@ class _HomePageState extends State<HomePage> {
                       fontWeight: FontWeight.bold,
                     )),
                 Container(
+                  margin: EdgeInsets.all(10),
                   padding: EdgeInsets.all(4),
                   decoration: BoxDecoration(
                     color: Colors.grey,
