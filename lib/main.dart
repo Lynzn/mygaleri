@@ -107,7 +107,7 @@ class MyCard extends StatelessWidget {
             width: 300,
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
-              image: DecorationImage(image: NetworkImage("http://via.placeholder.com/350x150")),
+              image: DecorationImage(image: NetworkImage("https://images.pexels.com/photos/6500734/pexels-photo-6500734.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")),
               borderRadius: BorderRadius.circular(16),
             ),
             child: Column(
