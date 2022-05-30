@@ -41,7 +41,10 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
         title: Text("Belajar Bottom Navbar"),
         backgroundColor: Colors.black,
       ),
-      body: Center(child: _pages.elementAt(_selectedNavbar)),
+      body: Container(
+        child: Center(child: _pages.elementAt(_selectedNavbar)),
+        color: Colors.black,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
