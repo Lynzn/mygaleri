@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white,
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(Icons.arrow_circle_right_rounded),
+                  child: Icon(Icons.search),
                 ),
               ],
             ),
@@ -202,8 +202,9 @@ class _Bills extends State<Bills> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25),
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
