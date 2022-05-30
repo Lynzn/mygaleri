@@ -22,9 +22,9 @@ class BelajarNavBar extends StatefulWidget {
 class _BelajarNavBarState extends State<BelajarNavBar> {
   int _selectedNavbar = 0;
   var _pages = <Widget>[
-    Icon(Icons.home, size: 200),
-    Icon(Icons.assignment),
-    Icon(Icons.person),
+    Icon(Icons.home, size: 400, color: Colors.green),
+    Icon(Icons.assignment, size: 400, color: Colors.green),
+    Icon(Icons.person, size: 400, color: Colors.green),
   ];
 
   void _changeSelectedNavBar(int index) {
