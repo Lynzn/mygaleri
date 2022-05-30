@@ -83,7 +83,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ])),
           SizedBox(height: 25),
-          SmoothPageIndicator(controller: _controller, count: 3, effect: ExpandingDotsEffect()),
         ],
       )),
     );
