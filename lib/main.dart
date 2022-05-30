@@ -27,13 +27,40 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: ('Beranda'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.analytics_outlined),
+            label: ('Kotak Masuk'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add),
+            label: ('Buat'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.assignment),
+            label: ('Pesanan'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: ('Akun'),
+          ),
+        ],
+        selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.grey,
+        showUnselectedLabels: true,
+      ),
       backgroundColor: Colors.white,
       body: SafeArea(
           child: Column(
         children: [
           //appbar
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -168,16 +195,12 @@ class Bills extends StatefulWidget {
 
 class _Bills extends State<Bills> {
   var _pages = <Widget>[
-    Icon(Icons.work, size: 25, color: Colors.blue),
-    Icon(Icons.shopping_cart, size: 25, color: Colors.blue),
-    Icon(Icons.wifi, size: 25, color: Colors.blue),
-    Icon(Icons.shopping_bag_sharp, size: 25, color: Colors.blue),
-    Icon(Icons.shopping_cart, size: 25, color: Colors.blue),
-    Icon(Icons.work, size: 25, color: Colors.blue),
-    Icon(Icons.shopping_cart, size: 25, color: Colors.blue),
-    Icon(Icons.wifi, size: 25, color: Colors.blue),
-    Icon(Icons.shopping_bag_sharp, size: 25, color: Colors.blue),
-    Icon(Icons.shopping_cart, size: 25, color: Colors.blue),
+    Icon(Icons.work, size: 20, color: Colors.blue),
+    Icon(Icons.shopping_cart, size: 20, color: Colors.blue),
+    Icon(Icons.wifi, size: 20, color: Colors.blue),
+    Icon(Icons.shopping_bag_sharp, size: 20, color: Colors.blue),
+    Icon(Icons.shopping_cart, size: 20, color: Colors.blue),
+    Icon(Icons.work, size: 20, color: Colors.blue),
   ];
 
   var _titleBills = [
@@ -187,16 +210,12 @@ class _Bills extends State<Bills> {
     'Wifi bills',
     'Supermarket bills',
     'Market bills',
-    'Supermarket bills',
-    'Store bills',
-    'Wifi bills',
-    'Supermarket bills',
   ];
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -205,12 +224,12 @@ class _Bills extends State<Bills> {
             children: [
               Text(
                 'Upcomming bill',
-                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 19.0, fontWeight: FontWeight.bold),
               ),
               Text('See All',
                   style: TextStyle(
                     color: Colors.purple,
-                    fontSize: 20.0,
+                    fontSize: 19.0,
                   )),
             ],
           ),
@@ -220,9 +239,9 @@ class _Bills extends State<Bills> {
           // )
           //
           Container(
-            height: 500,
+            height: 200,
             child: ListView.builder(
-              itemCount: 10,
+              itemCount: 6,
               itemBuilder: (BuildContext context, int index) {
                 return Container(
                   child: Card(
