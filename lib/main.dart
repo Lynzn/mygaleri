@@ -37,9 +37,8 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              SizedBox(height: 25),
               children: [
-                Text('Hello John!',
+                Text('Good Morning, John!',
                     style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
