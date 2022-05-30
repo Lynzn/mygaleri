@@ -107,7 +107,10 @@ class MyCard extends StatelessWidget {
             width: 300,
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
-              image: DecorationImage(image: NetworkImage("https://images.pexels.com/photos/6500734/pexels-photo-6500734.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")),
+              image: DecorationImage(
+                image: NetworkImage("https://static.vecteezy.com/system/resources/previews/006/329/857/non_2x/3d-money-holding-wallet-dollar-coin-on-isolate-background-online-payment-and-money-saving-concept-3d-holding-wallet-render-for-business-bank-finance-investment-vector.jpg"),
+                fit: BoxFit.cover,
+              ),
               borderRadius: BorderRadius.circular(16),
             ),
             child: Column(
