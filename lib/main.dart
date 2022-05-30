@@ -47,18 +47,22 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: ('Beranda'),
+            backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.assignment),
             label: ('Pesanan'),
+            backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: ('Akun'),
+            backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.mail),
             label: ('Inbox'),
+            backgroundColor: Colors.black,
           ),
         ],
         currentIndex: _selectedNavbar,
@@ -66,7 +70,6 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
         onTap: _changeSelectedNavBar,
-        backgroundColor: Colors.black,
       ),
     );
   }
