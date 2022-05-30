@@ -57,7 +57,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
           ),
         ],
         currentIndex: _selectedNavbar,
-        selectedItemColor: Colors.lightGreen.shade900,
+        selectedItemColor: Colors.lightGreen.shade400,
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
         onTap: _changeSelectedNavBar,
