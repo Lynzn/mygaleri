@@ -134,13 +134,13 @@ class MyCard extends StatelessWidget {
                       fontSize: 24,
                     )),
                 SizedBox(height: 30),
+                Text('Account Number',
+                    style: TextStyle(
+                      color: Colors.white,
+                    )),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Account Number',
-                        style: TextStyle(
-                          color: Colors.white,
-                        )),
                     Text(cardNumber.toString(),
                         style: TextStyle(
                           color: Colors.white,
