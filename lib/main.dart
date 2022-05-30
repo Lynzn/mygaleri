@@ -58,9 +58,27 @@ class _HomePageState extends State<HomePage> {
           Container(
               height: 200,
               child: PageView(scrollDirection: Axis.horizontal, children: [
-                MyCard(),
-                MyCard(),
-                MyCard(),
+                MyCard(
+                  balance: 2.478,
+                  cardNumber: 123456,
+                  month: 02,
+                  year: 24,
+                  color: Colors.purple,
+                ),
+                MyCard(
+                  balance: 8.981,
+                  cardNumber: 189364,
+                  month: 11,
+                  year: 24,
+                  color: Colors.purple,
+                ),
+                MyCard(
+                  balance: 4.127,
+                  cardNumber: 995623,
+                  month: 09,
+                  year: 25,
+                  color: Colors.purple,
+                ),
               ]))
         ],
       )),
@@ -69,7 +87,19 @@ class _HomePageState extends State<HomePage> {
 }
 
 class MyCard extends StatelessWidget {
-  const MyCard({Key? key}) : super(key: key);
+  final double balance;
+  final int cardNumber;
+  final int month;
+  final int year;
+  final color;
+  const MyCard({
+    Key? key,
+    required this.balance,
+    required this.cardNumber,
+    required this.month,
+    required this.year,
+    required this.color,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +121,7 @@ class MyCard extends StatelessWidget {
                       color: Colors.white,
                     )),
                 SizedBox(height: 30),
-                Text('\$5.867.000',
+                Text('\$' + balance.toString(),
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 24,
@@ -100,11 +130,11 @@ class MyCard extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('***8983',
+                    Text(cardNumber.toString(),
                         style: TextStyle(
                           color: Colors.white,
                         )),
-                    Text('10/24',
+                    Text(month.toString() + '/' + year.toString(),
                         style: TextStyle(
                           color: Colors.white,
                         )),
