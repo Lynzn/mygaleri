@@ -64,12 +64,25 @@ class _HomePageState extends State<HomePage> {
               ),
               child: Column(
                 children: [
-                  Text('Balance'),
-                  Text('\$5.867.000'),
+                  Text('Balance',
+                      style: TextStyle(
+                        color: Colors.white,
+                      )),
+                  Text('\$5.867.000',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                      )),
                   Row(
                     children: [
-                      Text('***8983'),
-                      Text('10/24'),
+                      Text('***8983',
+                          style: TextStyle(
+                            color: Colors.white,
+                          )),
+                      Text('10/24',
+                          style: TextStyle(
+                            color: Colors.white,
+                          )),
                     ],
                   )
                 ],
