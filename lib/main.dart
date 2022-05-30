@@ -23,6 +23,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _controller = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,7 +80,8 @@ class _HomePageState extends State<HomePage> {
                   year: 25,
                   color: Colors.green,
                 ),
-              ]))
+              ])),
+          SmoothPageIndicator(controller: _controller, count: 3)
         ],
       )),
     );
