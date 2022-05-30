@@ -127,11 +127,11 @@ class MyCard extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.white,
                     )),
-                SizedBox(height: 30),
+                SizedBox(height: 20),
                 Text('\$' + balance.toString(),
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 24,
+                      fontSize: 26,
                     )),
                 SizedBox(height: 30),
                 Text('Account Number',
