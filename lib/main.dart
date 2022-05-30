@@ -167,7 +167,6 @@ class Bills extends StatefulWidget {
 }
 
 class _Bills extends State<Bills> {
-  int _selectedNavbar = 0;
   var _pages = <Widget>[
     Icon(Icons.work, size: 25, color: Colors.blue),
     Icon(Icons.shopping_cart, size: 25, color: Colors.blue),
@@ -193,12 +192,6 @@ class _Bills extends State<Bills> {
     'Wifi bills',
     'Supermarket bills',
   ];
-
-  void _changeSelectedNavBar(int index) {
-    setState(() {
-      _selectedNavbar = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -261,35 +254,6 @@ class _Bills extends State<Bills> {
             color: Colors.white,
           ),
         ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: ('Beranda'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.analytics_outlined),
-            label: ('Kotak Masuk'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            label: ('Buat'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.assignment),
-            label: ('Pesanan'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: ('Akun'),
-          ),
-        ],
-        currentIndex: _selectedNavbar,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey,
-        showUnselectedLabels: true,
-        onTap: _changeSelectedNavBar,
       ),
     );
   }
