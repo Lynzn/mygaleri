@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white,
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(Icons.search),
+                  child: Icon(Icons.arrow_circle_right_rounded),
                 ),
               ],
             ),
