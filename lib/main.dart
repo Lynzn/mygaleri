@@ -38,7 +38,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Navbar"),
+        title: Text("Belajar Bottom Navbar"),
       ),
       body: Center(child: _pages.elementAt(_selectedNavbar)),
       bottomNavigationBar: BottomNavigationBar(
