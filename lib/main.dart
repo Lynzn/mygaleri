@@ -4,27 +4,17 @@ void main() {
   runApp(MaterialApp(
     home: Scaffold(
       appBar: AppBar(
-        title: Text("GeeksforGeeks"),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.comment),
-            tooltip: 'Comment Icon',
-            onPressed: () {},
-          ), //IconButton
-          IconButton(
-            icon: Icon(Icons.settings),
-            tooltip: 'Setting Icon',
-            onPressed: () {},
-          ), //IconButton
-        ], //<Widget>[]
-        backgroundColor: Colors.greenAccent[400],
-        elevation: 50.0,
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          tooltip: 'Menu Icon',
-          onPressed: () {},
-        ), //IconButton
-        brightness: Brightness.dark,
+        leading: Icon(Icons.menu),
+        title: Text('Page title'),
+        actions: [
+          Icon(Icons.favorite),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Icon(Icons.search),
+          ),
+          Icon(Icons.more_vert),
+        ],
+        backgroundColor: Colors.purple,
       ), //AppBar
       body: const Center(
         child: Text(
