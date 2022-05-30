@@ -24,7 +24,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final _controller = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,7 +85,7 @@ class _HomePageState extends State<HomePage> {
           SizedBox(height: 25),
 
           Container(
-            child: ListView(children: [
+            child: Column(children: [
               Bills(),
             ]),
           ),
