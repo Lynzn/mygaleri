@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
           SizedBox(height: 25),
 
           Container(
-            child: ListView(scrollDirection: Axis.vertical, children: [
+            child: ListView(children: [
               Bills(),
             ]),
           ),
