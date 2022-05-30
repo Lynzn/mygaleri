@@ -168,15 +168,15 @@ class Bills extends StatefulWidget {
 
 class _Bills extends State<Bills> {
   var _pages = <Widget>[
-    Icon(Icons.work, size: 16, color: Colors.blue),
-    Icon(Icons.shopping_cart, size: 16, color: Colors.blue),
-    Icon(Icons.wifi, size: 16, color: Colors.blue),
-    Icon(Icons.shopping_bag_sharp, size: 16, color: Colors.blue),
-    Icon(Icons.shopping_cart, size: 16, color: Colors.blue),
-    Icon(Icons.work, size: 16, color: Colors.blue),
-    Icon(Icons.shopping_cart, size: 16, color: Colors.blue),
-    Icon(Icons.wifi, size: 16, color: Colors.blue),
-    Icon(Icons.shopping_bag_sharp, size: 16, color: Colors.blue),
+    Icon(Icons.work, size: 25, color: Colors.blue),
+    Icon(Icons.shopping_cart, size: 25, color: Colors.blue),
+    Icon(Icons.wifi, size: 25, color: Colors.blue),
+    Icon(Icons.shopping_bag_sharp, size: 25, color: Colors.blue),
+    Icon(Icons.shopping_cart, size: 25, color: Colors.blue),
+    Icon(Icons.work, size: 25, color: Colors.blue),
+    Icon(Icons.shopping_cart, size: 25, color: Colors.blue),
+    Icon(Icons.wifi, size: 25, color: Colors.blue),
+    Icon(Icons.shopping_bag_sharp, size: 25, color: Colors.blue),
     Icon(Icons.shopping_cart, size: 25, color: Colors.blue),
   ];
 
@@ -229,7 +229,7 @@ class _Bills extends State<Bills> {
                     child: ListTile(
                       title: Text(
                         '${_titleBills[index]}',
-                        style: TextStyle(color: Colors.black, fontSize: 24.0),
+                        style: TextStyle(color: Colors.black, fontSize: 16.0),
                         overflow: TextOverflow.ellipsis,
                       ),
                       subtitle: Text(
