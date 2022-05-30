@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Text('Good Morning, John!',
                     style: TextStyle(
-                      fontSize: 26,
+                      fontSize: 22,
                       fontWeight: FontWeight.bold,
                     )),
                 Container(
