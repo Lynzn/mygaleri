@@ -52,48 +52,63 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-
           SizedBox(height: 25),
 
+          //card
           Container(
-              width: 300,
-              padding: EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 10),
-                  Text('Balance',
-                      style: TextStyle(
-                        color: Colors.white,
-                      )),
-                  SizedBox(height: 30),
-                  Text('\$5.867.000',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                      )),
-                  SizedBox(height: 30),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('***8983',
-                          style: TextStyle(
-                            color: Colors.white,
-                          )),
-                      Text('10/24',
-                          style: TextStyle(
-                            color: Colors.white,
-                          )),
-                    ],
-                  )
-                ],
-              ))
+              height: 200,
+              child: ListView(children: [
+                MyCard(),
+                MyCard(),
+                MyCard(),
+              ]))
         ],
       )),
     );
+  }
+}
+
+class MyCard extends StatelessWidget {
+  const MyCard({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        width: 300,
+        padding: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 10),
+            Text('Balance',
+                style: TextStyle(
+                  color: Colors.white,
+                )),
+            SizedBox(height: 30),
+            Text('\$5.867.000',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                )),
+            SizedBox(height: 30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('***8983',
+                    style: TextStyle(
+                      color: Colors.white,
+                    )),
+                Text('10/24',
+                    style: TextStyle(
+                      color: Colors.white,
+                    )),
+              ],
+            )
+          ],
+        ));
   }
 }
