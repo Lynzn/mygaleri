@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
           //card
           Container(
               height: 200,
-              child: ListView(children: [
+              child: ListView(scrollDirection: Axis.horizontal, children: [
                 MyCard(),
                 MyCard(),
                 MyCard(),
