@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -81,7 +82,8 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.green,
                 ),
               ])),
-          SmoothPageIndicator(controller: _controller, count: 3)
+          SizedBox(height: 25),
+          SmoothPageIndicator(controller: _controller, count: 3, effect: ExpandingDotsEffect()),
         ],
       )),
     );
