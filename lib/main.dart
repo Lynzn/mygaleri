@@ -38,6 +38,7 @@ class _HomePageState extends State<HomePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                SizedBox(height: 25),
                 Text('Hello John!',
                     style: TextStyle(
                       fontSize: 26,
